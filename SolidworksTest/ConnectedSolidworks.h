@@ -30,7 +30,7 @@ class ConnectedSolidworks :
     CComPtr<IModelView> activeView;  // Active view in SolidWorks
 	bool ComInstanceCreated = false;
 public:
-	ConnectedSolidworks(std::string appName) : ConnectedApp(appName) {}
+	ConnectedSolidworks() : ConnectedApp("SolidWorks") {}
 	// Function called when the user requests to connect to an external application
 	bool onConnect();
 	// Function called every ~20ms, this is where HID data

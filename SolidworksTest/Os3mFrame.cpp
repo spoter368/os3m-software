@@ -20,11 +20,14 @@ along with this program.If not, see < https://www.gnu.org/licenses/>.
 #include "Utilities.h"
 #include "hidapi.h"
 #include "ConnectedSolidworks.h"
+#include "ConnectedBlender.h"
 
 Os3mFrame::Os3mFrame(const wxString& title): wxFrame(nullptr, wxID_ANY, title)
 {
     // Here is where you add all your ConnectedApps!
-    appList.push_back(new ConnectedSolidworks("SolidWorks"));
+    appList.push_back(new ConnectedSolidworks());
+    appList.push_back(new ConnectedBlender());
+    appList.push_back(new ConnectedBlender());
 
     // Timer for API calls
     updateTimer = new wxTimer();
@@ -135,8 +138,12 @@ void Os3mFrame::OnConnectButtonClicked(wxCommandEvent& event)
                 appListBox->Enable(false);
                 wxString statusMessage = wxString::Format("Connection to %s successful!", currentApp->name);
                 connectionStatusText->SetLabel(statusMessage);
+                connectButton->SetLabel("Disconnect");
+            }else{
+                wxString statusMessage = wxString::Format("Connection to %s failed!", currentApp->name);
+                connectionStatusText->SetLabel(statusMessage);
             }
-            connectButton->SetLabel("Disconnect");
+
         }
         else {
             currentApp->onDisconnect();

@@ -30,6 +30,9 @@
     <ClCompile Include="ConnectedSolidworks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ConnectedBlender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Os3mFrame.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ConnectedSolidworks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConnectedBlender.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
