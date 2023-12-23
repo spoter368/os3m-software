@@ -27,7 +27,6 @@ Os3mFrame::Os3mFrame(const wxString& title): wxFrame(nullptr, wxID_ANY, title)
     // Here is where you add all your ConnectedApps!
     appList.push_back(new ConnectedSolidworks());
     appList.push_back(new ConnectedBlender());
-    appList.push_back(new ConnectedBlender());
 
     // Timer for API calls
     updateTimer = new wxTimer();
